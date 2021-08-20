@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Striveflix</title>
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: rgb(22, 22, 22);
+      }
+      h3 {
+        color: #ffffff;
+      }
+      h5 {
+        color: #ffffff;
+      }
+      .carousel-indicators li {
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+      }
+      .navbar {
+        background: black;
+      }
+
+      .navbar li a {
+        color: rgb(194, 189, 189);
+        margin-right: 10px;
+      }
+      .navbar-nav li a {
+        color: rgb(194, 189, 189);
+        margin-right: 10px;
+      }
+      #dropdown-btn a {
+        color: rgb(194, 189, 189);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand text-danger" href="#"
+        ><img
+          src="homepage-netflix_logo.png"
+          alt="Netflix logo"
+          style="width: 100px"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">TV Shows</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Movies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Recently Added</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">My List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/backoffice.html">Back Office</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav h-100">
+          <li class="nav-item my-auto">
+            <a href="#"> <i class="fas fa-search fa-lg"></i></a>
+          </li>
+          <li class="nav-item my-auto"><a href="#">KIDS</a></li>
+          <li class="nav-item">
+            <div class="btn-group">
+              <button
+                id="dropdown-btn"
+                type="button"
+                class="btn btn-lg dropdown-toggle"
+                data-toggle="dropdown"
+                data-display="static"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <a href="#"><i class="far fa-id-badge fa-lg"></i> User</a>
+              </button>
+              <div
+                class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right"
+              >
+                <button class="dropdown-item" type="button">
+                  <a style="color: black" href="/profile/profile.html"
+                    >My Profile</a
+                  >
+                </button>
+                <button class="dropdown-item" type="button">
+                  <a style="color: black" href="/settingsPage/setttings.html"
+                    >Settings</a
+                  >
+                </button>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <hr />
+
+    <!-- CONTAINER  -->
+    <!-- <div class="container-fluid overflow-auto">
+      <h3>Trending Now</h3>
+      <div class="row row-cols-5">
+        <div class="col">
+          <img src="homepage-media1.jpg" alt="" class="img-fluid" />
+        </div>
+        <div class="col">
+          <img src="homepage-media4.jpg" alt="" class="img-fluid" />
+        </div>
+        <div class="col">
+          <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+        </div>
+        <div class="col">
+          <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+        </div>
+        <div class="col">
+          <img src="homepage-media1.jpg" alt="" class="img-fluid" />
+        </div>
+        <div class="col">
+          <img src="homepage-media4.jpg" alt="" class="img-fluid" />
+        </div>
+        <div class="col">
+          <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+        </div>
+        <div class="col">
+          <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+        </div>
+      </div>
+    </div>
+
+    <hr /> -->
+
+    <!-- <hr> -->
+    <h5>Trending Now</h5>
+    <!-- CAROUSEL 1 -->
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row row-cols-6">
+            <img src="homepage-media1.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media4.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media10.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media11.jpg" alt="" class="img-fluid" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row row-cols-6">
+            <img src="homepage-media10.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media11.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media12.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media13.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row row-cols-6">
+            <img src="homepage-media32.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media10.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media11.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media12.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+            <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+          </div>
+          >
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <!-- <hr /> -->
+    <h5>Watch It Again</h5>
+    <!-- CAROUSEL 2 -->
+    <div
+    id="carousel2"
+    class="carousel slide"
+    data-ride="carousel"
+  >
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="row row-cols-6">
+          <img src="homepage-media1.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media4.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media10.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media11.jpg" alt="" class="img-fluid" />
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row row-cols-6">
+          <img src="homepage-media10.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media11.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media12.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media13.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="row row-cols-6">
+          <img src="homepage-media32.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media10.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media11.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media12.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+          <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+        </div>
+        >
+      </div>
+    </div>
+    <a
+      class="carousel-control-prev"
+      href="#carousel2"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carousel2"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  <!-- <hr /> -->
+  <h5>New Releases</h5>
+  <!-- CAROUSEL 3 -->
+  <div
+  id="carousel3"
+  class="carousel slide"
+  data-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row row-cols-6">
+        <img src="homepage-media1.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media4.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media10.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media11.jpg" alt="" class="img-fluid" />
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="row row-cols-6">
+        <img src="homepage-media10.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media11.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media12.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media13.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+      </div>
+    </div>
+    <div class="carousel-item">
+      <div class="row row-cols-6">
+        <img src="homepage-media32.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media10.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media11.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media12.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+        <img src="homepage-media9.jpg" alt="" class="img-fluid" />
+      </div>
+      >
+    </div>
+  </div>
+  <a
+    class="carousel-control-prev"
+    href="#carousel3"
+    role="button"
+    data-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a
+    class="carousel-control-next"
+    href="#carousel3"
+    role="button"
+    data-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<hr />
+
+    <!-- CAROUSEL -->
+    <!-- <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="col">
+            <img src="homepage-media1.jpg" alt="" class="img-fluid" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col">
+            <img src="homepage-media4.jpg" alt="" class="img-fluid" />
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="col">
+            <img src="homepage-media6.jpg" alt="" class="img-fluid" />
+          </div>
+          >
+        </div>
+      </div>
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <hr /> -->
+
+    <!-- CARDS -->
+    <!-- <div class="card-group">
+      <div class="card">
+        <img src="homepage-media6.jpg" class="card-img-top" alt="..." />
+      </div>
+      <div class="card">
+        <img src="homepage-media6.jpg" class="card-img-top" alt="..." />
+      </div>
+      <div class="card">
+        <img src="homepage-media6.jpg" class="card-img-top" alt="..." />
+      </div>
+      <div class="card">
+        <img src="homepage-media6.jpg" class="card-img-top" alt="..." />
+      </div>
+      <div class="card">
+        <img src="homepage-media6.jpg" class="card-img-top" alt="..." />
+      </div>
+      <div class="card">
+        <img src="homepage-media6.jpg" class="card-img-top" alt="..." />
+      </div>
+      <div class="card">
+        <img src="homepage-media6.jpg" class="card-img-top" alt="..." />
+      </div>
+    </div> -->
+
+    <!-- <footer>
+      <p>hi guys!</p> 
+    </footer> -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+
+      const getMoives = async () => {
+        const response =
+      }
+      window.onload =  () =>{
+
+      }
+    </script>
+  </body>
+</html>
