@@ -116,7 +116,7 @@
 
       window.onload = async () => {
               try{
-                   const response = await fetch(`https://striveschool-api.herokuapp.com/api/movies/horror/${movieId}`,
+                   const response = await fetch("https://striveschool-api.herokuapp.com/api/movies/horror",
                {
                  method : "GET",    
                  headers: {"Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFjZjBlNzJkNTI2MjAwMTViNmRjOTEiLCJpYXQiOjE2MjkyODY2MzIsImV4cCI6MTYzMDQ5NjIzMn0.DmqdR4D3rw25zQ1mpfIjVbVzPkMA5en-dJpOGpqfwP4",
@@ -128,16 +128,19 @@
                   console.log(movieData)
 
                   const movieContainer = document.getElementById("movie-details")
-                  movieContainer.innerHTML = `
-              <h1 class=" font-weight-bolder mt-4">${movieData.name}</h1>
-              <p class="text-monospace mb-4">Description: ${movieData.description}</p>
-              <h6 class="bg-light pl-2 py-3">Extra Details</h6>
-              <ul class="list-group list-group-flush">
-                  <li class="list-group-item pl-2"><strong>id:</strong> ${movieData._id}</li>
-                  <li class="list-group-item pl-2"><strong>createdAt: </strong>  ${movieData.createdAt}</li>
-                  <li class="list-group-item pl-2"><strong>updatedAt: </strong>  ${movieData.updatedAt}</li>
+                  movieData.map( movie => {
+                    movieContainer.innerHTML = `
+              <h1 class=" font-weight-bolder mt-4">${movie.name}</h1>
+              <p class="text-monospace mb-4">Description: ${movie.description}</p>
+              <h6 class="bg-dark pl-2 py-3">Extra Details</h6>
+              <ul class="list-group text-dark list-group-flush">
+                  <li class="list-group-item text-dark pl-2"><strong>id:</strong> ${movie._id}</li>
+                  <li class="list-group-item pl-2"><strong>createdAt: </strong>  ${movie.createdAt}</li>
+                  <li class="list-group-item pl-2"><strong>updatedAt: </strong>  ${movie.updatedAt}</li>
               </ul>     
               `
+                  })
+                  
               }
           } catch (err) {
               console.log(err)
@@ -149,6 +152,8 @@
       const edit = () => {
           window.location.assign("./backoffice.html?Id=" + movieId)
       }
+
+      
 
   
 
