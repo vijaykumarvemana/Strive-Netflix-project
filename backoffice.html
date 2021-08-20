@@ -58,7 +58,7 @@
             <a class="nav-link" href="#">My List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">My List</a>
+            <a class="nav-link" href="#">Back office</a>
           </li>
         </ul>
         <ul class="navbar-nav h-100">
@@ -120,6 +120,9 @@
                     </div>
                     
                     <button type="submit" class="btn btn-dark"><span>Submit</span></button>
+                    <button id="delete-btn" type="button" class="btn btn-danger d-none" onclick="deleteMovie()">
+                      <i class="fas fa-trash-alt"></i>
+                  </button>
                     
                 </form>
             </div>
@@ -138,6 +141,47 @@
     ></script>
 
     <script>
+
+      const movieId = new URLSearchParams(window.location.search).get("Id")
+      console.log(movieId)
+      const url = movieId ? `https://striveschool-api.herokuapp.com/api/movies/${movieId}` : "https://striveschool-api.herokuapp.com/api/movies/"
+      const method = movieId ? "PUT" : "POST"
+      window.onload = async () => {
+
+if (movieId) {
+    const submitBtn = document.querySelector("button[type=submit]")
+    const submitBtnText = document.querySelector("button[type=submit] span")
+
+    submitBtn.querySelector("span").innerText = "Edit Movie"
+    submitBtn.classList.remove("btn-dark")
+    submitBtn.classList.add("btn-primary")
+    document.getElementById("delete-btn").classList.remove("d-none")
+
+   
+
+    
+    
+    const response = await fetch(url, {
+    method,
+    
+    headers: {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFjZjBlNzJkNTI2MjAwMTViNmRjOTEiLCJpYXQiOjE2MjkyODY2MzIsImV4cCI6MTYzMDQ5NjIzMn0.DmqdR4D3rw25zQ1mpfIjVbVzPkMA5en-dJpOGpqfwP4"
+    }
+    
+})
+    const movieDetails = await response.json()
+
+    document.getElementById("name").value = movieDetails.name
+    document.getElementById("description").value = movieDetails.description
+    document.getElementById("category").value = movieDetails.category
+    document.getElementById("imageUrl").value = movieDetails.imageUrl
+    
+
+
+} else {
+   console.log("okay")
+}
+}
      const submitButton = async (event) => {
         event.preventDefault()
         const movie = {
@@ -170,6 +214,21 @@
           console.log(err)
     } 
 }
+
+const deleteMovie = async () => {
+    
+    try {
+        const response = await fetch(url, { method: "DELETE",
+        headers: {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTFjZjBlNzJkNTI2MjAwMTViNmRjOTEiLCJpYXQiOjE2MjkyODY2MzIsImV4cCI6MTYzMDQ5NjIzMn0.DmqdR4D3rw25zQ1mpfIjVbVzPkMA5en-dJpOGpqfwP4",
+    } })
+   
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+
     </script>
   </body>
 </html>
