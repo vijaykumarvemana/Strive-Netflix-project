@@ -58,7 +58,7 @@
             <a class="nav-link" href="#">My List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Back office</a>
+            <a class="nav-link" href="#">Add Movie</a>
           </li>
         </ul>
         <ul class="navbar-nav h-100">
@@ -130,6 +130,7 @@
                   const movieContainer = document.getElementById("movie-details")
                   movieData.map( movie => {
                     movieContainer.innerHTML = `
+               <img src=${movie.imageUrl} alt="image" style="width: 100px; height: 100px";>     
               <h1 class=" font-weight-bolder mt-4">${movie.name}</h1>
               <p class="text-monospace mb-4">Description: ${movie.description}</p>
               <h6 class="bg-dark pl-2 py-3">Extra Details</h6>

@@ -95,7 +95,7 @@
             <a class="nav-link" href="#">My List</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/backoffice.html">Back Office</a>
+            <a class="nav-link" href="/backoffice.html">Add Movie</a>
           </li>
         </ul>
         <ul class="navbar-nav h-100">
@@ -453,8 +453,9 @@
         const movieData = await response.json()    
                console.log(movieData)  
                const movieh = document.querySelector("#horror")
+               
                movieData.map(movie => {
-                movieh.innerHTML =""
+              
                 movieh.innerHTML += `<div class="col mt-4">
           <div class="card">
             <img src=${movie.imageUrl} alt="...">
@@ -506,7 +507,7 @@
                console.log(movieData)  
                const movieh = document.querySelector("#sci-fi")
                movieData.forEach (movie => {
-                movieh.innerHTML =""
+                
                 movieh.innerHTML += `<div class="col mt-4">
           <div class="card">
             <img src=${movie.imageUrl} alt="...">
@@ -517,6 +518,7 @@
                }
              
                )  
+            
                
                
                 }
